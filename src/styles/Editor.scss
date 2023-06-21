@@ -1,0 +1,231 @@
+@import "_vars";
+
+.editor {
+  width: 100%;
+  height: calc(100% - 40px);
+  background-color: $bg-card;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+  flex-direction: column;
+  &-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 54px;
+    & > .main_actions {
+      top: 0;
+      & > .main_actions-save {
+        display: none;
+      }
+      & > .main_actions-favorite {
+        display: none;
+      }
+    }
+    //&-main_actions {
+    //  position: absolute;
+    //  top: 0;
+    //  left: 0;
+    //  //width: 50px;
+    //  height: 40px;
+    //  gap: 30px;
+    //  padding: 0 20px 0 20px;
+    //  border-radius: 0 0 20px 0;
+    //  background-color: $grey-dark;
+    //  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    //  display: flex;
+    //  align-items: center;
+    //  justify-content: center;
+    //  &-burger {
+    //    width: 20px;
+    //    height: 20px;
+    //    cursor: pointer;
+    //
+    //  }
+    //}
+    &-title {
+      font-family: "Roboto", sans-serif;
+      background: transparent;
+      border: 0;
+      outline: 0;
+      color: white;
+      //height: 100%;
+      width: 240px;
+      overflow: hidden;
+      text-overflow: "...";
+      font-weight: 700;
+      font-size: 19px;
+      height: 27px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+    &-actions {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 0 0 0 10px;
+      background-color: $grey-dark;
+      line-height: 2.5px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+    &-separator {
+      width: calc(100% - 32px);
+      border: 1px solid $grey-light;
+      //background-color: ;
+      margin-top: 0;
+      margin-left: 15px;
+      margin-bottom: 0;
+    }
+  }
+  &-textarea {
+    margin-top: 15px;
+    width: calc(100% - 30px);
+    height: 100%;
+    margin-left: 15px;
+    &-input {
+      font-family: "Roboto", sans-serif;
+      font-size: 13px;
+      line-height: 16px;
+
+      width: 100%;
+      height: 100%;
+      resize: none;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: white;
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+    }
+  }
+  &-counter {
+    align-self: flex-end;
+    display: flex;
+    font-size: 12px;
+    gap: 16px;
+    background-color: $grey-light;
+    height: 25px;
+    align-items: center;
+    margin-top: 15px;
+    padding-left: 23px;
+    padding-right: 23px;
+    border-radius: 20px 0 0 0;
+    & > div {
+      pointer-events: none;
+    }
+  }
+  &-no_note {
+    color: $grey-lightest;
+    font-size: 15px;
+    margin-top: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .editor {
+    &-header {
+      & > .main_actions {
+        box-shadow: unset;
+        & > .main_actions-save {
+          display: block;
+        }
+        & > .main_actions-favorite {
+          display: block;
+        }
+        & > .main_actions-close {
+          display: block;
+        }
+      }
+      &-title {
+        width: 348px;
+      }
+      &-separator {
+        width: calc(100% - 118px);
+        margin-left: 59px;
+      }
+
+    }
+    &-textarea {
+      width: calc(100% - 40px);
+      margin-left: 20px;
+      &-input {
+        font-size: 17px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1368px) {
+  .editor {
+    width: calc(100% - 150px);
+    border-radius: 20px;
+    &-header {
+      & > .main_actions {
+        border-radius: 20px 0 20px 0;
+        padding: 0 35px;
+        height: 30px;
+        gap: 20px;
+        &.unselected {
+          display: none;
+        }
+        & > div {
+          width: 15px;
+          height: 15px;
+          & > svg {
+            width: 15px;
+            height: 15px;
+          }
+          //scale: 0.777;
+        }
+        & > .main_actions-burger {
+          display: none;
+        }
+      }
+      &-title {
+        width: 518px;
+      }
+      &-actions {
+        border-radius: 0 20px 0 10px;
+      }
+      &-separator {
+        width: calc(100% - 218px);
+        margin-left: 109px;
+      }
+    }
+    &-textarea {
+      width: calc(100% - 70px);
+      margin-left: 35px;
+      &-input {
+        font-size: 19px;
+      }
+    }
+
+    &-counter {
+      border-radius: 20px 0 20px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .editor {
+    width: calc(100% - 172px);
+    &-textarea {
+      width: calc(100% - 100px);
+      margin-left: 50px;
+      &-input {
+        line-height: 19px;
+      }
+    }
+  }
+}
