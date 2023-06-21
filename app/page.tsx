@@ -16,7 +16,7 @@ export default function Index() {
         <div className="main-content">
             <Editor/>
         </div>
-        {notifications.length > 0 && <>
+        {notifications?.length > 0 && <>
             <div className="notifications-overlay">
                 {notifications.map((notification, index) => {
                     return <Notification onClick={() => {

@@ -30,10 +30,10 @@ export default function Sidebar() {
                 <div className="sidebar-title">Notes</div>
                 <div className="sidebar-separator"/>
                 <div className="sidebar-list">
-                    {notes.length === 0 && <>
+                    {notes?.length === 0 && <>
                         <div className={"sidebar-list-no_items"}>No notes yet.</div>
                     </>}
-                    {notes.length > 0 && notes.map((note, index) => {
+                    {notes?.length > 0 && notes.map((note, index) => {
                         return <NoteListItem key={index} name={note.title} isFavorite={note.isFavorite} isSelected={note.id === selectedNote?.id} onClick={() => {
                             $selectedNote.set(getNoteById(note.id));
                             $isSidebar.set(false);
@@ -46,7 +46,7 @@ export default function Sidebar() {
                     {/*<NoteListItem name={"Note 1"} isFavorite={true} isSelected={true}/>*/}
                 </div>
             </div>
-            <div className="sidebar-bottom">{notes.length} notes</div>
+            <div className="sidebar-bottom">{notes?.length} notes</div>
         </div>
         <div onClick={() => $isSidebar.set(false)} className="sidebar-overlay"></div>
         </>;

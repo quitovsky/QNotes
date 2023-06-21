@@ -1,6 +1,6 @@
 import { atom } from 'nanostores';
 import {Note} from "@/utils/entities";
-import {loadNotes} from "@/utils/Storage";
+import {loadNotes, saveStorage} from "@/utils/Storage";
 import {ReactNode} from "react";
 import {TNotification} from "@/utils/types";
 import {notifications} from "@/utils/notifications";
@@ -67,6 +67,6 @@ export const createNote = () => {
 export const saveData = () => {
     console.log($notes.get());
     console.log("Saving")
-    localStorage.setItem("notes", JSON.stringify($notes.get()));
+    saveStorage();
     console.log(localStorage.getItem("notes"))
 }

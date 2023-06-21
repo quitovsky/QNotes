@@ -61,7 +61,7 @@ export default function Editor(
         }
     }, [noteTextarea.current])
 
-    if(notes.length === 0) return <>
+    if(notes?.length == 0) return <>
         <div className="editor">
             <div className="editor-header">
                 <MainActions/>
