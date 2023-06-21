@@ -6,7 +6,6 @@ import {$isSidebar, $notifications, sendNotification} from "@/utils/Store";
 import {useStore} from "@nanostores/react";
 import Notification from "@/components/Notification";
 import React, {useEffect} from "react";
-import {savedNotification} from "@/utils/notifications";
 
 export default function Index() {
     const isSidebar = useStore($isSidebar)
