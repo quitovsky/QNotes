@@ -1,0 +1,52 @@
+@import "@/styles/_vars";
+@import "@/styles/_animations";
+
+.select {
+  width: 100%;
+
+  &-active {
+    background-color: $dark-100;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    padding: 7px 10px;
+    gap: 10px;
+    font-size: 11px;
+    line-height: 16px;
+    &-arrow {
+      display: grid;
+      place-items: center;
+      & > svg {
+        width: 6px;
+        //transform: rotate(360deg);
+        transition: .2s;
+
+        height: 3px;
+      }
+      &.opened {
+        & > svg {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+  &-option {
+    cursor: pointer;
+    padding-bottom: 5px;
+    border-bottom: 0.5px solid $dark-60;
+    &s {
+
+      display: none;
+      margin-top: 5px;
+      font-size: 11px;
+      background-color: $dark-100;
+      border-radius: 15px;
+      padding: 10px;
+      flex-direction: column;
+      gap: 7px;
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}

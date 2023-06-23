@@ -3,7 +3,7 @@
 .editor {
   width: 100%;
   height: calc(100% - 40px);
-  background-color: $bg-card;
+  background-color: $dark-90;
   margin-top: 20px;
   margin-bottom: 20px;
   position: relative;
@@ -52,7 +52,7 @@
       background: transparent;
       border: 0;
       outline: 0;
-      color: white;
+      color: $text;
       //height: 100%;
       width: 240px;
       overflow: hidden;
@@ -71,7 +71,7 @@
       width: 25px;
       height: 25px;
       border-radius: 0 0 0 10px;
-      background-color: $grey-dark;
+      background-color: $dark-80;
       line-height: 2.5px;
       display: grid;
       place-items: center;
@@ -79,7 +79,7 @@
     }
     &-separator {
       width: calc(100% - 32px);
-      border: 1px solid $grey-light;
+      border: 1px solid $dark-70;
       //background-color: ;
       margin-top: 0;
       margin-left: 15px;
@@ -102,7 +102,7 @@
       padding: 0;
       border: 0;
       background: transparent;
-      color: white;
+      color: $text;
       &:focus {
         border: 0;
         outline: 0;
@@ -114,7 +114,7 @@
     display: flex;
     font-size: 12px;
     gap: 16px;
-    background-color: $grey-light;
+    background-color: $dark-70;
     height: 25px;
     align-items: center;
     margin-top: 15px;
@@ -126,7 +126,7 @@
     }
   }
   &-no_note {
-    color: $grey-lightest;
+    color: $dark-60;
     font-size: 15px;
     margin-top: 50%;
   }

@@ -1,7 +1,42 @@
-$bg-grey: #222222;
-$bg-card: #292929;
-$grey-dark: #363636;
-$grey-light: #484848;
-$grey-lightest: #9B9B9B;
-$gold: #E1A60D;
-$success: #38a038;
+//$dark-100: #222222; //bg-grey
+//$dark-90: #292929; //bg-card
+//$dark-80: #363636; //grey-dark
+//$dark-70: #484848; //grey-light
+//$dark-60: #9B9B9B; //grey-lightest
+//$gold: #E1A60D;
+//$success: #38a038;
+//
+//$test1: red;
+//$test2: yellow;
+//$prim: var(--test);
+
+$dark-100: var(--dark-100);
+$dark-90: var(--dark-90);
+$dark-80: var(--dark-80);
+$dark-70: var(--dark-70);
+$dark-60: var(--dark-60);
+$gold: var(--gold);
+$success: var(--success);
+
+$text: var(--text);
+
+body {
+  --dark-100: #222222;
+  --dark-90: #292929;
+  --dark-80: #363636;
+  --dark-70: #484848;
+  --dark-60: #9B9B9B;
+  --gold: #E1A60D;
+  --success: #38A038;
+  --text: white;
+}
+body[data-cs="light"] {
+  --dark-100: #D5D5D5;
+  --dark-90: #FEFFF9;
+  --dark-80: #E1E1E1;
+  --dark-70: #F8F8F8;
+  --dark-60: #9C9C9C;
+  --gold: #E1A60D;
+  --success: #38A038;
+  --text: black;
+}

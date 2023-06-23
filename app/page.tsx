@@ -2,20 +2,28 @@
 
 import Editor from "@/components/Editor/Editor";
 import Sidebar from "@/components/Sidebar/Sidebar";
-import {$isSidebar, $notifications, sendNotification} from "@/utils/Store";
+import {$isSettings, $isSidebar, $notifications, sendNotification} from "@/utils/Store";
 import {useStore} from "@nanostores/react";
 import Notification from "@/components/Notification";
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
+import Settings from "@/components/Settings/Settings";
 
 export default function Index() {
-    const isSidebar = useStore($isSidebar)
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    const isSettings = useStore($isSettings)
     const notifications = useStore($notifications)
 
-    return <>
+    if(mounted) return <>
         <Sidebar/>
         <div className="main-content">
             <Editor/>
         </div>
+        {isSettings && <Settings/>}
         {notifications?.length > 0 && <>
             <div className="notifications-overlay">
                 {notifications.map((notification, index) => {

@@ -7,6 +7,7 @@ import {notifications} from "@/utils/notifications";
 
 export const $notes = atom<Note[]>(loadNotes());
 export const $isSidebar = atom(false);
+export const $isSettings = atom(false);
 export const $selectedNote = atom<Note | null>(null);
 
 export const $notifications = atom<TNotification[]>([])

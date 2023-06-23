@@ -8,10 +8,10 @@ html, body {
   margin: 0;
   top: 0;
   padding: 0;
-  color: white;
+  color: $text;
   font-family: "Roboto", sans-serif;
 
-  background-color: $bg-grey;
+  background-color: $dark-100;
 }
 
 #root {
@@ -44,13 +44,13 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 15px;
-  background-color: $grey-dark;
+  background-color: $dark-80;
   padding: 0 20px;
   border-radius: 15px;
   cursor: pointer;
   animation: fadeIn 5s ease-in-out forwards;
   font-size: 15px;
-  color: $grey-lightest;
+  color: $dark-60;
   &.success {
     & > svg {
       fill: $success;
