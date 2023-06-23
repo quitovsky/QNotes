@@ -5,6 +5,13 @@ import {ReactNode} from "react";
 import {TNotification} from "@/utils/types";
 import {notifications} from "@/utils/notifications";
 
+export const colorSchemes = {
+    0: "",
+    1: "light",
+    2: "viperr"
+}
+export const $colorScheme = atom<string>("");
+
 export const $notes = atom<Note[]>(loadNotes());
 export const $isSidebar = atom(false);
 export const $isSettings = atom(false);

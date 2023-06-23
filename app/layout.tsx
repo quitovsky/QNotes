@@ -1,8 +1,22 @@
-import React from "react";
+"use client";
+
+import React, {useEffect} from "react";
 import Sidebar from "@/components/Sidebar/Sidebar";
 import "@/styles/global.scss";
+import {$colorScheme} from "@/utils/Store";
+import {useStore} from "@nanostores/react";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+
+    const colorScheme = useStore($colorScheme);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("color-scheme");
+        if (savedTheme) {
+            $colorScheme.set(savedTheme);
+        }
+    }, [])
+
     return (
         <>
             <html>
@@ -12,8 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
                 <title>Document</title>
             </head>
-            <body>
-            {/*<Sidebar/>*/}
+            <body data-cs={colorScheme}>
             <div id="root">
                 {children}
             </div>

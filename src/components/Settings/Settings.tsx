@@ -1,8 +1,9 @@
 import "@/styles/Settings.scss"
 import Select from "@/ui/Select";
-import {$isSettings} from "@/utils/Store";
+import {$colorScheme, $isSettings, colorSchemes} from "@/utils/Store";
 
 export default function Settings () {
+
     return (<>
         <div className="settings-container">
             <div className="settings">
@@ -17,6 +18,19 @@ export default function Settings () {
                     <div className="settings-content-element">
                         <div className="settings-content-element-title">Store method</div>
                         <Select options={["localStorage", "cloud (coming soon...)"]} defaultIndex={1} onValueChange={(e) => console.log(e)}/>
+                    </div>
+                    <div className="settings-content-element">
+                        <div className="settings-content-element-title">Color scheme</div>
+                        <Select options={["default", "light (beta)", "viperr"]} defaultIndex={(() => {
+                            for (let i in colorSchemes) {
+                                if (colorSchemes[i] === $colorScheme.get()) {
+                                    return parseInt(i);
+                                }
+                            }
+                        })()} onValueChange={(e) => {
+                            $colorScheme.set(colorSchemes[e.index]);
+                            localStorage.setItem("color-scheme", colorSchemes[e.index])
+                        }}/>
                     </div>
                 </div>
                 <div className="settings-footer">

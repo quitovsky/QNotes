@@ -44,6 +44,9 @@
   &-content {
     width: 310px;
     margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
     &-element {
       &-title {
         margin-bottom: 2px;
